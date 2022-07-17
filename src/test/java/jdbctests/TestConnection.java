@@ -11,7 +11,7 @@ public class TestConnection {
         Connection connection = DriverManager.getConnection(dbUrl,dbUsername, dbPassword);
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM regions ");
-/*
+
         //once you set up connection default pointer looks for 0
         //next() --> move pointer to first row
         resultSet.next();
@@ -36,7 +36,7 @@ public class TestConnection {
         System.out.println(resultSet.getInt(1)+ " - "+ resultSet.getString(2));
 
 
- */
+
         while(resultSet.next()){
 
             System.out.println(resultSet.getInt(1)+ " - "+ resultSet.getString(2));
