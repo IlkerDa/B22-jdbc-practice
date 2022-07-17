@@ -23,6 +23,23 @@ public class DBUtilsPractice {
         }
 
         DBUtils.destroy();
+    }
+
+    @Test
+    public void test2(){
+        //create connection
+        DBUtils.createConnection();
+        String query = "SELECT first_name,last_name,salary,job_id\n" +
+                "from employees\n" +
+                "where rownum <2";
+
+        Map<String, Object> rowMap = DBUtils.getRowMap(query);
+
+        System.out.println(rowMap.toString());
+
+        //close the connection
+        DBUtils.destroy();
 
     }
+
 }
